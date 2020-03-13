@@ -10,14 +10,25 @@ class App extends Component {
     super()
 
     this.state = {
-
+      inventory: [{
+        name: 'shoes',
+        price: 23,
+        img: 'txt' 
+      }, 
+      {
+        name:'shit',
+        price: 8, 
+        img: 'txt'
+      }]
     }
   }
 
   render(){
   return (
     <div className="App">
-      <Dashboard />         
+      <Dashboard 
+      inventory = {this.state.inventory}
+      />         
       <Form />
       <Header />
     </div>

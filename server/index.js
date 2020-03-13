@@ -1,14 +1,24 @@
-const express = require("express");
+require('dotenv').config();
+const express = require('express'),
+      massive = require('massive'),
+      ctrl = require('./controller'),
+      {SERVER_PORT, CONNECTION_STRING} = process.env
+
 const cors = require("cors");
-const Ctrl = require("./controller");
-
-
 const app = express();
+
+massive({
+    connectionString: CONNECTION_STRING,
+    ssl: {rejectUnauthorized: false}
+}).then(db => {
+    app.set('db', db)
+    console.log('DB connected')
+})
 
 app.use(cors());
 app.use(express.json());
 
-// SERVER_PORT
-const port = 4000
+
+const port = SERVER_PORT
 
 app.listen(port, () => console.log(`Server running on port: ${port}`))
