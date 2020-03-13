@@ -1,6 +1,6 @@
 
 import React, {Component} from 'react';
-// import './Form.css';
+import './Form.css';
 import axios from 'axios';
 // import { Link } from 'react-router-dom';
 
@@ -40,10 +40,20 @@ class Form extends Component{
 
     }
 
+    createNew = () => {
+        this.props.createNewProduct()     
+    }
+
     render(){
         return(
-            <div>
+            <div className='form-container'>
+                <div className='photo-container'>
+                    <img alt='pic' src={require('../../elephant.jpg')} className='photo' />
+                </div>
                 <div className='inputs-container' id='input-boxes'>
+                    
+                    <div>
+                    <h3>Image-URL:</h3>
                     <input
                     className='input' 
                     placeholder='Image URL'
@@ -51,6 +61,9 @@ class Form extends Component{
                     onChange={e => {this.handleImgChange(e)}}
                     value={this.state.image}
                     />
+                    </div>
+                    <div>
+                    <h3>Name:</h3>
                     <input 
                     className='input'
                     placeholder='Name'
@@ -58,6 +71,10 @@ class Form extends Component{
                     onChange={e => {this.handleNameChange(e)}}
                     value={this.state.name}
                     />
+                    </div>
+
+                    <div>
+                    <h3>Price:</h3>
                     <input 
                     className='input'
                     placeholder='Price'
@@ -65,9 +82,13 @@ class Form extends Component{
                     onChange={e => {this.handlePriceChange(e)}}
                     value={this.state.price}
                     />
+                    </div>
                 </div>
-                <button className='button' onClick={() => this.resetInputs()}>Cancel</button>
+                <div className='buttons'>
 
+                <button className='button' onClick={() => this.resetInputs()}>Cancel</button>
+                <button className='button' onClick={() => this.createNew()}>Add to inventory</button>
+                </div>
 
             </div>
         )

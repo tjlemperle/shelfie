@@ -1,0 +1,46 @@
+.form-container{
+    background-color: rgb(90, 204, 90);
+    height: 62vh;
+    width: 27%;
+    border-radius: 10px;
+    position: absolute;
+    top: 17vh;
+    right: 15%;
+}
+/* 
+.photo-container{
+    height:25%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+} */
+
+.input{
+    width: 90%;
+}
+
+.input-container{
+    position: absolute;
+    bottom: 15px;
+}
+
+.buttons{
+    position: relative;
+    bottom: -20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.photo{
+    position: relative;
+    top: 25px;
+    height:250px;
+    width: 400px;
+    margin-bottom: 25px;
+}
+
+/* h3{
+   
+} */

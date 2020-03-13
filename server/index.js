@@ -18,6 +18,9 @@ massive({
 app.use(cors());
 app.use(express.json());
 
+app.get('/api/inventory', ctrl.getInventory)
+app.post('/api/product', ctrl.newProduct)
+
 
 const port = SERVER_PORT
 
